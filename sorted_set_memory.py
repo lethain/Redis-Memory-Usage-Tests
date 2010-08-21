@@ -7,7 +7,7 @@ r = redis.Redis(host='localhost', port=6379, db=0)
 
 # number of sets                                                                                      
 for num_sets in (100, 1000,10000):
-    forset_size in (100, 1000,10000):
+    for set_size in (100, 1000,10000):
         r.flushall()
         time.sleep(1.0)
         initial_size = r.dbsize()
@@ -16,7 +16,7 @@ for num_sets in (100, 1000,10000):
         for i in xrange(0, num_sets):
             # number of items per set                                                                 
             for j in xrange(0, set_size):
-                        r.zadd("set.%s" % (i,), str(time.time()), str(uuid.uuid4()))
+                        r.zadd("set.%s" % (i,), str(uuid.uuid4()), time.time())
 
         final_size = r.dbsize()
         final_info = r.info()
