@@ -6,8 +6,8 @@ r = redis.Redis(host='localhost', port=6379, db=0)
 
 
 # number of sets                                                                                      
-for num_sets in (100, 1000,10000):
-    for set_size in (100, 1000,10000):
+for num_sets in (10000,):
+    for set_size in (1000,):
         r.flushall()
         time.sleep(1.0)
         initial_size = r.dbsize()

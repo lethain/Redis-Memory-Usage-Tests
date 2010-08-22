@@ -17,8 +17,8 @@ for num_array in (100, 1000,10000):
                 final_size = r.dbsize()
                 final_info = r.info()
 
-                print "For %s lists with %s values." % (num_array, array_size)
-                print "Keys: %s => %s" % (initial_size, final_size)
-                print "Memory: %s => %s" % (initial_info['used_memory_human'],
+        print "For %s lists with %s values." % (num_array, array_size)
+        print "Keys: %s => %s" % (initial_size, final_size)
+        print "Memory: %s => %s" % (initial_info['used_memory_human'],
                                     final_info['used_memory_human'])
-                r.flushall()
+        r.flushall()

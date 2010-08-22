@@ -3,7 +3,7 @@ import uuid
 import time
 
 r = redis.Redis(host='localhost', port=6379, db=0)
-for num_strings in (100, 1000,10000, 100000, 1000000):
+for num_strings in (10000000,):
     r.flushall()
     time.sleep(1.0)
     initial_size = r.dbsize()
